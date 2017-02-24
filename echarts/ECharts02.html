@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ECharts02自定义统计图表</title>
+	<script src="node_modules/echarts/dist/echarts.min.js"></script>
+</head>
+<body>
+	<div id="main" style="width:600px;height:400px"></div>
+	<script>
+		var myChart=echarts.init(document.querySelector('#main'));
+		var option={
+			title:{
+				text:"ECharts02自定义统计图表",
+				paddng:20	
+			},
+			tooltip:{
+				trigger:"axis",
+				axisPointer:{
+					type:"shadow"
+				}
+			},
+			legend:{
+				data:['销量','产量']
+			},
+			xAxis:{
+				type:'category',
+				data:['2016','07','08','09','10','11','12'],
+				position:"bottom",
+				axisLine:{
+					show:false
+				},
+				axisTick:{
+					show:false
+				}
+			},
+			yAxis:{
+				inverse:true,
+				position:"right",
+				axisLine:{
+					show:false
+				},
+				axisTick:{
+					show:false
+				}
+			},
+			series:[{
+				name:"销量",
+				type:"bar",
+				data:[5,20,26,10,10,20,23]
+			},
+			{
+				name:"产量",
+				type:"bar",
+				data:[25,40,82,15,30,28,38]
+			}]
+		};
+		myChart.setOption(option);
+	</script>
+</body>
+</html>
