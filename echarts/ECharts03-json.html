@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ECharts03geo地图数据使用</title>
+	<script src="node_modules/echarts/dist/echarts.min.js"></script>
+	<script src="assets/jquery-1.11.1.min.js"></script>
+
+</head>
+<body>
+	<div id="main" style="width:600px;height:400px"></div>
+	<script>
+	//通过ajax请求获取json数据后注册地图即可使用
+		$.get('assets/china.json',function(chinaJson){
+			echarts.registerMap('china',chinaJson);
+			var chart=echarts.init(document.querySelector("#main"));
+			chart.setOption({
+				series:[{
+					type:"map",
+					map:"china"
+				}]
+			})
+		})
+	</script>
+</body>
+</html>

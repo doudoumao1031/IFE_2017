@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ECharts03geo地图数据使用</title>
+	<script src="node_modules/echarts/dist/echarts.min.js"></script>
+	<script src="assets/world.js"></script>
+</head>
+<body>
+	<div id="main" style="width:600px;height:400px"></div>
+	<script>
+		var myChart=echarts.init(document.querySelector('#main'));
+		var option={
+			series:[{
+				type:"map",
+				map:"world"
+			}]
+		};
+		myChart.setOption(option);
+	</script>
+</body>
+</html>
