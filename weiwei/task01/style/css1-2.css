@@ -12,9 +12,12 @@
 a{
 	text-decoration: none;
 }
+html{
+	
+
+}
 body{
 	background-color:pink;
-
 	padding:0 30px;
 	font:14px/2em san-serif, Microsoft Yahei;
 	margin:0;
@@ -24,7 +27,6 @@ header,main,footer{
 	margin:0 auto;
 	width: 100%;
 	box-sizing:border-box;
-	background-color: #e5e5e5;
 }
 
 body>header,body>footer{
@@ -64,6 +66,7 @@ ul.navTop >li>a.on{
 /* main*/
 main{
 	padding:20px;
+	background-color: #e5e5e5;
 }
 
 article,aside{
@@ -79,9 +82,9 @@ article{
 article p{
 	text-indent: 2em;
 }
-article header{
-
-}
+/* article header{
+	background-color: #fff;
+} */
 article header>h3{
 	color:#888;
 }
