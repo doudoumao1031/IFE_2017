@@ -12,19 +12,19 @@
 a{
 	text-decoration: none;
 }
-/* ul,ol{
-	list-style: none;
-}
- */body{
-	background-color: #f5f5f5;
+body{
+	background-color:pink;
+
 	padding:0 30px;
 	font:14px/2em san-serif, Microsoft Yahei;
+	margin:0;
 }
 
 header,main,footer{
 	margin:0 auto;
 	width: 100%;
 	box-sizing:border-box;
+	background-color: #e5e5e5;
 }
 
 body>header,body>footer{
