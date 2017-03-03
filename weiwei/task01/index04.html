@@ -1,0 +1,46 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>水平垂直居中</title>
+	<style>
+		.main{
+			width: 400px;
+			height: 200px;
+			background-color: #ccc;
+			position: absolute;
+			top:50%;
+			left:50%;
+			margin:-100px 0 0 -200px;
+			overflow: hidden;
+		}
+		.top,.bottom{
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			background-color: #fc0;
+			border-radius: 50px;
+		}
+		.top{
+			top:-50px;
+			left:-50px;
+		}
+		.bottom{
+			bottom:-50px;
+			right: -50px;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="main">
+		<span class="top"></span>
+		<span class="bottom"></span>
+	</div>
+	
+</body>
+</html>
+<!--思路:
+1.垂直水平居中:绝对定位,left:50%,top:50%,margin-left:-w/2 ,margin-top:-h/2;
+2.span标签绝对定位,设置border-radius;
+3.设置main的overflow:hidden;
+ -->
