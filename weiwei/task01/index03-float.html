@@ -1,0 +1,78 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>三栏布局</title>
+	<style>
+		div{
+			padding:20px;
+			background-color: #eee;
+			border:1px solid #999;
+			box-sizing:border-box;
+		}
+		.container{
+			margin:0 auto;
+		}
+		.left{
+			width: 200px;
+			float: left;
+		}
+		.right{
+			width: 180px;
+			float: right;
+			height: 100%;
+		}
+		.middle{
+			margin:0 200px 0 220px;
+			height: 100%;
+		}
+		p{
+			background-color: #fff;
+			margin:0;
+		}
+		/* .clearfix::before,.clearfix::after{
+			display: table;
+			content:'';
+		}
+		.clearfix::after{
+			clear: both;
+		}
+		.clearfix{
+			zoom:1;
+		} */
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="left ">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos reiciendis, dolore nesciunt reprehenderit alias perspiciatis, dolorem, ut ducimus quia culpa sapiente recusandae, enim hic amet delectus quod aliquid odit. Omnis!</p>
+		</div>
+		<div class="right ">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos reiciendis, dolore nesciunt reprehenderit alias perspiciatis, dolorem, ut ducimus quia culpa sapiente recusandae, enim hic amet delectus quod aliquid odit. Omnis!
+			</p>
+		</div>
+		<div class="middle">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos reiciendis, dolore nesciunt reprehenderit alias perspiciatis, dolorem, ut ducimus quia culpa sapiente recusandae, enim hic amet delectus quod aliquid odit. Omnis!
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos reiciendis, dolore nesciunt reprehenderit alias perspiciatis, dolorem, ut ducimus quia culpa sapiente recusandae, enim hic amet delectus quod aliquid odit. Omnis!
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos reiciendis, dolore nesciunt reprehenderit alias perspiciatis, dolorem, ut ducimus quia culpa sapiente recusandae, enim hic amet delectus quod aliquid odit. Omnis!</p>
+		</div>
+	</div>
+</body>
+</html>
+<!-- 思路:
+1.刚开始觉得很简单, 左右两边分别设置float属性;
+2.给中间元素设置清除浮动即可
+结果:三个子快之间没有margin,左边和中间快顶部对齐,但
+是将右边块挤了下去;父元素高度没有被撑开
+修正:
+1.设置元素盒子属性border-box;
+2.设置中间元素左右margin分别是左右元素的offsetWidth;
+结果:元素padding不重叠了,父元素高度被撑开,但是右边元素还是被挤压下去;
+修正:
+1.设置右边元素clear:left;结果反而将父元素撑得更大;
+2.设置右边元素vertical-aglin:top;或者overflow:hidden 结果无效
+3.尝试减少中间快的margin-right;结果无效
+4.给中间元素添加clearfix属性,结果中间元素高度撑开,但是右边元素还是被积压下去了;
+最终修正:
+1.将右边块和中间块的html调换顺序
+2.取消清楚浮动,设置右边块和中间块的height:100%即可;
+ -->

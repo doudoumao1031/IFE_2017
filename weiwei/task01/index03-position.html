@@ -1,0 +1,73 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>三栏布局</title>
+	<style>
+		div{
+			padding:20px;
+			background-color: #eee;
+			border:1px solid #999;
+			box-sizing:border-box;
+		}
+		.container{
+			position: relative;
+			margin:0 auto;
+		}
+		.left{
+			width: 200px;
+			position: absolute;
+			top:20px;
+			left:20px;
+
+		}
+		.right{
+			width: 180px;
+			position:absolute;
+			right: 20px;
+			top:20px;
+			bottom:20px;
+		}
+		.middle{
+			margin:0 200px 0 220px;
+			height: 100%;
+		}
+		p{
+			background-color: #fff;
+			margin:0;
+		}
+	</style>
+</head>
+<body>
+	<div class="container ">
+		<div class="left ">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos reiciendis, dolore nesciunt reprehenderit alias perspiciatis, dolorem, ut ducimus quia culpa sapiente recusandae, enim hic amet delectus quod aliquid odit. Omnis!</p>
+		</div>
+		<div class="middle">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos reiciendis, dolore nesciunt reprehenderit alias perspiciatis, dolorem, ut ducimus quia culpa sapiente recusandae, enim hic amet delectus quod aliquid odit. Omnis!
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde laboriosam aliquam facere explicabo aspernatur harum, fuga, sunt atque laborum officiis ducimus repellendus qui. Quis eum ipsam voluptates, perspiciatis quidem provident.
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam explicabo eligendi ut quasi cum, reprehenderit repellendus nostrum, quos nemo, incidunt perspiciatis? Quisquam modi nostrum aspernatur ullam corporis, sequi eveniet ab!
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos reiciendis, dolore nesciunt reprehenderit alias perspiciatis, dolorem, ut ducimus quia culpa sapiente recusandae, enim hic amet delectus quod aliquid odit. Omnis!
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde laboriosam aliquam facere explicabo aspernatur harum, fuga, sunt atque laborum officiis ducimus repellendus qui. Quis eum ipsam voluptates, perspiciatis quidem provident.
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam explicabo eligendi ut quasi cum, reprehenderit repellendus nostrum, quos nemo, incidunt perspiciatis? Quisquam modi nostrum aspernatur ullam corporis, sequi eveniet ab!
+			</p>
+
+		</div>
+		<div class="right">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos reiciendis, dolore nesciunt reprehenderit alias perspiciatis, dolorem, ut ducimus quia culpa sapiente recusandae, enim hic amet delectus quod aliquid odit. Omnis!</p>
+		</div>
+	</div>
+</body>
+</html>
+<!-- 思路:绝对定位方式
+1. 父相子绝,设置中间块的左右margin;
+2.盒子属性设置为border-box;
+结果:
+左右元素,紧靠着父元素边框,父元素高度没有被撑开;
+修正:
+1.重新设置左右元素定位
+2.父元素overflow:hidden //左右2侧元素被截断
+修正:
+1.中间块height:100%;
+2.右边块:bottom:20px;
+
+ -->
